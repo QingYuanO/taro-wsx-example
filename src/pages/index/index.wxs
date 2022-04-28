@@ -36,4 +36,7 @@ function touchmove(event, ins) {
 module.exports = {
   touchstart: touchstart,
   touchmove: touchmove,
+  propObserver: function (newValue, oldValue, ownerInstance, instance) {
+    console.log("prop observer", newValue, oldValue);
+  },
 };
