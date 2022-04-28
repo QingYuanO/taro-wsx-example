@@ -7,8 +7,8 @@ const Index = () => {
   const [propValue, setPropValue] = useState(0);
   //wxs中调用此方法
   const testCallmethod = () => {
-    console.log('testCallmethod')
-  }
+    console.log("testCallmethod");
+  };
   return (
     <View>
       <View
@@ -16,7 +16,17 @@ const Index = () => {
         onClick={testWxs.testClick}
         prop={propValue}
         onTouchMove={testWxs.touchmove}
-        style={{height:100,width:100,borderRadius:50,backgroundColor:'rebeccapurple'}}
+        onTouchStart={testWxs.touchstart}
+        onTouchEnd={testWxs.touchmove}
+        style={{
+          height: 100,
+          width: 100,
+          borderRadius: 50,
+          backgroundColor: "rebeccapurple",
+          position: "absolute",
+          top: 50,
+          left: 50,
+        }}
         className="movable"
       ></View>
       <Button onClick={() => setPropValue((state) => state + 1)}>
